@@ -1,12 +1,11 @@
 package com.epam.lab.driver;
 
-import com.epam.lab.utils.property.ConfigProperty;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.Integer.parseInt;
 
 public class Driver {
 
@@ -28,7 +27,8 @@ public class Driver {
                 getDriver().quit();
             } catch (Exception e) {
                 e.printStackTrace();
-            };
+            }
+            ;
             threadLocalScope.remove();
         }
     }

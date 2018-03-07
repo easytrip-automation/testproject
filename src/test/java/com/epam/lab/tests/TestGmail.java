@@ -12,6 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class TestGmail {
 
+
     @Test(dataProvider = "getUsersData", dataProviderClass = TestProvider.class)
     public void sendFromDrafts(UserModel userModel) {
 

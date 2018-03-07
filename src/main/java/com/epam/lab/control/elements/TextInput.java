@@ -8,4 +8,9 @@ public class TextInput extends Element {
         super(webElement);
     }
 
+    @Override
+    public void sendKeys(CharSequence... charSequences) {
+        webElement.sendKeys(charSequences);
+    }
+
 }
