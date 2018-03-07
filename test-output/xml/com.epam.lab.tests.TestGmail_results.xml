@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="9,173">
+           time="9,529">
   <properties />
   
   
-            <testcase name="sendFromDrafts" time="5,050" classname="com.epam.lab.tests.TestGmail" />
-                <testcase name="sendFromDrafts" time="4,123" classname="com.epam.lab.tests.TestGmail" />
+            <testcase name="sendFromDrafts" time="5,205" classname="com.epam.lab.tests.TestGmail" />
+                <testcase name="sendFromDrafts" time="4,324" classname="com.epam.lab.tests.TestGmail" />
       
 </testsuite>
