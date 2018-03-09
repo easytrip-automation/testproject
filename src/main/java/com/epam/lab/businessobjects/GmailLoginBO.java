@@ -1,6 +1,5 @@
 package com.epam.lab.businessobjects;
 
-import com.epam.lab.models.UserModel;
 import com.epam.lab.pageobjects.GmailLoginPage;
 import org.apache.log4j.Logger;
 
@@ -18,10 +17,10 @@ public class GmailLoginBO {
     }
 
 
-    public void loginAS(UserModel userModel) {
+    public void loginAS(String mail, String password) {
         LOG.info("Entering Mail and Password");
-        gmailLoginPage.enterEmail(userModel.getEmail());
-        gmailLoginPage.enterPassword(userModel.getPassword());
+        gmailLoginPage.enterEmail(mail);
+        gmailLoginPage.enterPassword(password);
     }
 
     public boolean checkLoginSuccess() {

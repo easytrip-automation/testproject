@@ -8,17 +8,14 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Driver {
-
-    private static final ThreadLocal<WebDriver> threadLocalScope = new ThreadLocal<WebDriver>() {
-        @Override
-        protected WebDriver initialValue() {
-            WebDriver driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-            return driver;
-        }
-    };
+    private static WebDriver driver;
 
     private Driver() {
+    }
+
+    public static void createDriver() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     public static void close() {
@@ -28,12 +25,13 @@ public class Driver {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            ;
-            threadLocalScope.remove();
         }
     }
 
     public static WebDriver getDriver() {
-        return threadLocalScope.get();
+        if (driver == null) {
+            createDriver();
+        }
+        return driver;
     }
 }
