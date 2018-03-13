@@ -6,14 +6,16 @@ import org.apache.log4j.Logger;
 public class GmailLoginBO {
     private static final Logger LOG = Logger.getLogger(GmailLoginBO.class);
     private GmailLoginPage gmailLoginPage;
+    private String browser;
 
-    public GmailLoginBO() {
-        gmailLoginPage = new GmailLoginPage();
+    public GmailLoginBO(String browser) {
+        gmailLoginPage = new GmailLoginPage(browser);
+        this.browser = browser;
     }
 
     public void openLoginPage() {
         LOG.info("Opening Login Page");
-        gmailLoginPage.openLoginPage();
+        gmailLoginPage.openLoginPage(browser);
     }
 
 

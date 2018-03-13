@@ -37,17 +37,4 @@ public class ConfigProperty {
         return prop.getProperty("mailLink");
     }
 
-    public String getPathMessage() {
-        return prop.getProperty("pathMessage");
-    }
-
-    public String getPathUserData() {
-        return prop.getProperty("pathUserData");
-    }
-    public String getPathXLSXUsers() {
-        return prop.getProperty("pathXLSXUsers");
-    }
-    public String getPathCSVMessages() {
-        return prop.getProperty("pathCSVMessages");
-    }
 }

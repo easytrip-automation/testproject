@@ -6,6 +6,7 @@
         <listener class-name="com.epam.lab.utils.report.ReportListener"/>
     </listeners>
     <test name="Test Send Letter">
+        <parameter name="browser" value="firefox"/>
         <parameter name="username" value="testseleniumlab5@gmail.com"/>
         <parameter name="password" value="teStlab#5"/>
         <classes>

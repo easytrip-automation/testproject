@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5,102">
+           time="22.841">
   <properties />
   
   
-            <testcase name="sendFromDrafts" time="5,102" classname="com.epam.lab.tests.TestGmail" />
+            <testcase name="sendFromDrafts" time="22.841" classname="com.epam.lab.tests.TestGmail" />
       
 </testsuite>
