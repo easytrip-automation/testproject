@@ -37,4 +37,6 @@ public class ConfigProperty {
         return prop.getProperty("mailLink");
     }
 
+    public String getChromeExtension(){return prop.getProperty("chromeExtension");}
+
 }

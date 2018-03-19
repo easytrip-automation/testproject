@@ -5,11 +5,13 @@ import com.epam.lab.utils.property.ConfigProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 
@@ -37,8 +39,12 @@ public class DriverFactory {
         if (driver == null) {
             if (CHROME.equals(browser)) {
                 ConfigProperty configProperty = new ConfigProperty();
+                ChromeOptions options = new ChromeOptions();
+                options.addExtensions(new File(configProperty.getChromeExtension()));
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                 System.setProperty(configProperty.getChromeDriver(), configProperty.getUrl());
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(capabilities);
                 setWait(driver);
 
             } else if (FIREFOX.equals(browser)) {
