@@ -6,12 +6,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
+
 import static org.testng.Assert.assertTrue;
 
 
 public class TestGmail {
-
-
 
     @Parameters({"browser","username", "password"})
     @Test
@@ -19,16 +20,15 @@ public class TestGmail {
 
         GmailLoginBO gmailLoginBO = new GmailLoginBO(browser);
 
-        gmailLoginBO.openLoginPage();
+/*        gmailLoginBO.openLoginPage();
 
         gmailLoginBO.loginAS(username, password);
 
-        assertTrue(gmailLoginBO.checkLoginSuccess());
-
+        assertTrue(gmailLoginBO.checkLoginSuccess());*/
     }
 
-    @AfterMethod
+/*    @AfterMethod
     public void closeDriver() {
         DriverFactory.close();
-    }
+    }*/
 }
