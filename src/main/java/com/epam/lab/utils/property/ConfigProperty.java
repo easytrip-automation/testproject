@@ -33,7 +33,7 @@ public class ConfigProperty {
         return prop.getProperty("pathDriver");
     }
 
-    public String getGmailLink() {
+    public String getLink() {
         return prop.getProperty("mailLink");
     }
 

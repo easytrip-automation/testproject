@@ -59,7 +59,7 @@ public class DriverFactory {
         }
     }
 
-    public static WebDriver getDriver(String browser) {
+    public static WebDriver getDriver( ) {
         if (driver == null) {
             createDriver();
         }
