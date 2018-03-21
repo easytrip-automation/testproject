@@ -16,7 +16,6 @@ import java.awt.event.InputEvent;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-
 public class DriverFactory {
     private static final String CHROME = "chrome";
     private static final String FIREFOX = "firefox";
@@ -77,20 +76,25 @@ public class DriverFactory {
     }
 
     private static void clickOnPlugin() {
-        double koef = 1.25;
-        try {
-            Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-            double width = dimension.getWidth();
-            double height = dimension.getHeight();
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
+        double width = dimension.getWidth();
+        double height = dimension.getHeight();
+        double mulCoeff = 1.25;
+        int x = 64;
+        int y = 58;
+
+        try {
             Robot r = new Robot();
             r.mouseMove(0, 0);
+
             if (width > 1600 || height > 960) {
-                width /= koef;
-                r.mouseMove((int) (width - 51), 46);
+                width /= mulCoeff;
+                r.mouseMove((int) (width - x / mulCoeff), (int) (y / mulCoeff));
             } else {
-                r.mouseMove((int) (width - 64), 58);
+                r.mouseMove((int) (width - x), y);
             }
+
             r.mousePress(InputEvent.BUTTON1_MASK);
             r.mouseRelease(InputEvent.BUTTON1_MASK);
         } catch (AWTException e) {
