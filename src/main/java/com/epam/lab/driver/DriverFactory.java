@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
     private static final String CHROME = "chrome";
-    private static final String FIREFOX = "firefox";
     private static WebDriver driver;
 
     private DriverFactory() {
@@ -59,7 +56,7 @@ public class DriverFactory {
         }
     }
 
-    public static WebDriver getDriver( ) {
+    public static WebDriver getDriver() {
         if (driver == null) {
             createDriver();
         }
@@ -68,9 +65,9 @@ public class DriverFactory {
 
     private static void clickOnPlugin() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int ppi = Toolkit.getDefaultToolkit().getScreenResolution();
 
         double width = dimension.getWidth();
-        double height = dimension.getHeight();
         double mulCoeff = 1.25;
         int x = 64;
         int y = 58;
@@ -79,7 +76,7 @@ public class DriverFactory {
             Robot r = new Robot();
             r.mouseMove(0, 0);
 
-            if (width > 1600 || height > 960) {
+            if (ppi > 96) {
                 width /= mulCoeff;
                 r.mouseMove((int) (width - x / mulCoeff), (int) (y / mulCoeff));
             } else {
