@@ -36,26 +36,17 @@ public class DriverFactory {
         DriverFactory.getWait().until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    private static void createDriver(String browser) {
+    private static void createDriver() {
         if (driver == null) {
-            if (CHROME.equals(browser)) {
-                ConfigProperty configProperty = new ConfigProperty();
-                System.setProperty(configProperty.getChromeDriver(), configProperty.getUrl());
-                ChromeOptions options = new ChromeOptions();
-                options.addExtensions(new File(configProperty.getChromeExtension()));
-                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                driver = new ChromeDriver(capabilities);
-                setWait(driver);
-                driver.manage().window().maximize();
-                clickOnPlugin();
-            } else if (FIREFOX.equals(browser)) {
-                DesiredCapabilities capabilitiesFirefox = new DesiredCapabilities();
-                capabilitiesFirefox.setCapability("marionette", false);
-                driver = new FirefoxDriver(capabilitiesFirefox);
-                setWait(driver);
-            } else throw new IllegalArgumentException("Invalid browser property set in configuration file");
-        }
+            ConfigProperty configProperty = new ConfigProperty();
+            System.setProperty(configProperty.getChromeDriver(), configProperty.getUrl());
+            ChromeOptions options = new ChromeOptions();
+            options.addExtensions(new File(configProperty.getChromeExtension()));
+            driver = new ChromeDriver(options);
+            setWait(driver);
+            driver.manage().window().maximize();
+            clickOnPlugin();
+        } else throw new IllegalArgumentException("Invalid browser property set in configuration file");
     }
 
     public static void close() {
@@ -70,7 +61,7 @@ public class DriverFactory {
 
     public static WebDriver getDriver(String browser) {
         if (driver == null) {
-            createDriver(browser);
+            createDriver();
         }
         return driver;
     }
