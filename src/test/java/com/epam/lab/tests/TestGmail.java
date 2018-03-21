@@ -21,15 +21,15 @@ public class TestGmail {
 
         GmailLoginBO gmailLoginBO = new GmailLoginBO(browser);
 
-/*        gmailLoginBO.openLoginPage();
+        gmailLoginBO.openLoginPage();
 
         gmailLoginBO.loginAS(username, password);
 
-        assertTrue(gmailLoginBO.checkLoginSuccess());*/
+        assertTrue(gmailLoginBO.checkLoginSuccess());
     }
 
-/*    @AfterMethod
+    @AfterMethod
     public void closeDriver() {
         DriverFactory.close();
-    }*/
+    }
 }
