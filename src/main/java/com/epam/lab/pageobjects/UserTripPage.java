@@ -3,165 +3,156 @@ package com.epam.lab.pageobjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
+public class UserTripPage extends AbstractPage {
 
-public class UserTripPage extends AbstractPage{
-
-
-    @FindBy(xpath="//div[@class='edit-dates']")
-    WebElement editDatesButton;
+    @FindBy(xpath = "//div[@class='edit-dates']")
+    private WebElement editDatesButton;
 
     @FindBy(xpath = "//div[@class='input-group mb-3 ml-6 mr-6']/a")
-    WebElement saveEditedDateButton;
+    private WebElement saveEditedDateButton;
 
-    @FindBy(xpath="//share-button[@button='facebook']//button")
-    WebElement shareFacebookButton;
+    @FindBy(xpath = "//share-button[@button='facebook']//button")
+    private WebElement shareFacebookButton;
 
     //------------------------------------------------------------Route-------------------------------------------------------------------
     @FindBy(xpath = "//a[@id='ngb-tab-3']")
-    WebElement routeLink;
+    private WebElement routeLink;
 
     @FindBy(xpath = "//div[@class='tab-pane active ng-star-inserted']//a[1]")
-    WebElement addDestinationButton;
+    private WebElement addDestinationButton;
 
     @FindBy(xpath = "//div[@class='modal-body']//input[@placeholder='Choose a country']")
-    WebElement addDestinationCountryInput;
+    private WebElement addDestinationCountryInput;
 
     @FindBy(xpath = "//div[@class='modal-body']//input[@placeholder='Choose a city']")
-    WebElement addDestinationCityInput;
+    private WebElement addDestinationCityInput;
 
     // It seems that those buttons doesnt work
     @FindBy(xpath = "//span[@class='fa fa-plus']")
-    WebElement PlusDaysButton;
+    private WebElement PlusDaysButton;
 
     @FindBy(xpath = "//span[@class='fa fa-minus']")
-    WebElement MinusDaysButton;
+    private WebElement MinusDaysButton;
 
     @FindBy(xpath = "//div[@class='modal-footer']//a")
-    WebElement addDestinationPopUpButton;
+    private WebElement addDestinationPopUpButton;
 
     @FindBy(xpath = "//div[@class='tab-pane active ng-star-inserted']//a[2]")
-    WebElement saveAsTourButton;
-
+    private WebElement saveAsTourButton;
 
     //---------------------------------------------Day By Day------------------------------------------------------------------------------------
     @FindBy(xpath = "//a[@id='ngb-tab-4']")
-    WebElement dayByDayLink;
+    private WebElement dayByDayLink;
 
     //At first day of trip -- please explore first day while writing your test
     @FindBy(xpath = "//div[@class='col-md-12 ng-star-inserted']/div[1]//div[@id='dropdownBasic1']")
-    WebElement exploreThingsToDoDropDown;
+    private WebElement exploreThingsToDoDropDown;
 
     //You must change 'Los Angeles' to city you choose for your trip!!
     @FindBy(xpath = "//div[@class='d-inline-block explore-btn-block ng-star-inserted show dropdown']//span[text()='Los Angeles']")
-    WebElement exploreThingsToDoByCityButton;
+    private WebElement exploreThingsToDoByCityButton;
 
     //See details for first place of first day
     @FindBy(xpath = "//div[@class='col-md-12 ng-star-inserted']/div[1]/ul/li[1]//a")
-    WebElement seeDetailsButton;
+    private WebElement seeDetailsButton;
 
     //remove first place for this day
     @FindBy(xpath = "//div[@class='col-md-12 ng-star-inserted']/div[1]/ul/li[1]//button/span")
-    WebElement removePlaceButton;
+    private WebElement removePlaceButton;
 
     //--------------------------------------------------Where to stay----------------------------------------------------------------------------
     @FindBy(xpath = "//a[@id='ngb-tab-5']")
-    WebElement whereToStayLink;
+    private WebElement whereToStayLink;
 
     @FindBy(xpath = "//div[@class='col-md-12 ng-star-inserted']/div[1]//div[@id='dropdownBasic2']")
-    WebElement findLogingDropDown;
+    private WebElement findLogingDropDown;
 
     @FindBy(xpath = "//div[@class='d-inline-block explore-btn-block ng-star-inserted show dropdown']//span[text()='Los Angeles']")
-    WebElement findLogingByCityButton;
+    private WebElement findLogingByCityButton;
 
     @FindBy(xpath = "//div[@class='col-md-12 ng-star-inserted']/div[1]/ul/li[1]//a")
-    WebElement seeDetailsOfLoging;
+    private WebElement seeDetailsOfLoging;
 
     @FindBy(xpath = "//a[@href='http://www.booking.com']")
-    WebElement findHotelsLink;
+    private WebElement findHotelsLink;
 
     @FindBy(xpath = "//a[@href='http://www.airbnb.com']")
-    WebElement findHomesLink;
+    private WebElement findHomesLink;
 
-    public void editDates(){
+    public void editDates() {
         editDatesButton.click();
     }
 
-    public void saveEditedDate(){
+    public void saveEditedDate() {
         saveEditedDateButton.click();
     }
 
-    public void shareWithFacebook(){
+    public void shareWithFacebook() {
         shareFacebookButton.click();
     }
 
-    public void goToRoute(){
+    public void goToRoute() {
         routeLink.click();
     }
 
-    public void addDestination(){
+    public void addDestination() {
         addDestinationButton.click();
     }
 
-    public void setCountryDestination (String country){
+    public void setCountryDestination(String country) {
         addDestinationCountryInput.sendKeys(country);
     }
 
-    public void setCityDestination (String city){
+    public void setCityDestination(String city) {
         addDestinationCityInput.sendKeys(city);
     }
 
-    public void saveDestinationInPouUpWindow(){
+    public void saveDestinationInPouUpWindow() {
         addDestinationPopUpButton.click();
     }
 
-
-    public void saveTour(){
+    public void saveTour() {
         saveAsTourButton.click();
     }
 
-
-
-    public void goToWhereToStay(){
+    public void goToWhereToStay() {
         whereToStayLink.click();
     }
 
     //-------------------------------------------------Day By Day------------------------------------------------------------------------
 
-    public void goToDayByDay(){
+    public void goToDayByDay() {
         dayByDayLink.click();
     }
 
-    public void clickExploreThingsToDo(){
+    public void clickExploreThingsToDo() {
         exploreThingsToDoDropDown.click();
         exploreThingsToDoByCityButton.click();
     }
 
-    public void seeDetailsForPlace () {
+    public void seeDetailsForPlace() {
         seeDetailsButton.click();
     }
 
-    public void removePlace (int index){
+    public void removePlace(int index) {
         removePlaceButton.click();
     }
 
     //------------------------------------Where to stay---------------------------------------------------------------------------
-    public void clickfindLoging(){
+    public void clickFindLodging() {
         findLogingDropDown.click();
         findLogingByCityButton.click();
     }
 
-    public void seeDetailsOfLoging(){
+    public void seeDetailsOfLodging() {
         seeDetailsOfLoging.click();
     }
 
-    public void findHotels(){
+    public void findHotels() {
         findHotelsLink.click();
     }
 
-    public void findHomes(){
+    public void findHomes() {
         findHomesLink.click();
     }
-
-
 }

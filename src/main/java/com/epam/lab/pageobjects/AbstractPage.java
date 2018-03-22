@@ -5,9 +5,7 @@ import com.epam.lab.driver.DriverFactory;
 import org.openqa.selenium.support.PageFactory;
 
 abstract class AbstractPage {
-
-
-    AbstractPage( ) {
+    AbstractPage() {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 }

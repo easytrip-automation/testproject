@@ -7,10 +7,7 @@ import org.testng.annotations.AfterMethod;
 
 import org.testng.annotations.Test;
 
-
-
-public class TestGmail {
-
+public class EasyTripTest {
 
     @Test
    public void testTest(){
