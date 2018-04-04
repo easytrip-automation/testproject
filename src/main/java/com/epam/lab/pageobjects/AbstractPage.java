@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 abstract class AbstractPage {
     private WebDriver driver;
 
-    AbstractPage( ) {
-        PageFactory.initElements( driver = DriverFactory.getDriver(), this);
+    AbstractPage() {
+        PageFactory.initElements(driver = DriverFactory.getDriver(), this);
     }
 
     private WebDriverWait getWait() {
@@ -42,5 +42,4 @@ abstract class AbstractPage {
     void waitUntilVisible(WebElement element) {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
-
 }

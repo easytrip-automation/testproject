@@ -43,6 +43,4 @@ public class ToursPage extends AbstractPage {
     //wheretoStay
     @FindBy(xpath = "//*[@id=\"ngb-tab-8-panel\"]/div/div[2]/ul/li/div[2]/div[3]/a")
     WebElement seeDetailsWhereToStayButton;
-
-
 }

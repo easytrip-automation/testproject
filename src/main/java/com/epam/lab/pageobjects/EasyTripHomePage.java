@@ -5,10 +5,11 @@ import com.epam.lab.utils.property.ConfigProperty;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class EasyTripHomePage extends AbstractPage {
+public class HomePage extends AbstractPage {
     public EasyTripHomePage() {
+        super();
     }
-    
+
     public void openEasyTripHomePage() {
         ConfigProperty configProperty = new ConfigProperty();
         DriverFactory.getDriver().get(configProperty.getLink());
@@ -103,36 +104,46 @@ public class EasyTripHomePage extends AbstractPage {
     public void clickManageProfileButton() {
         manageProfileButton.click();
     }
+
     public void editUserName(String newName) {
         firstNameField.clear();
         firstNameField.sendKeys(newName);
     }
+
     public void editLastName(String newName) {
         lastNameField.clear();
         lastNameField.sendKeys(newName);
     }
+
     public void editEmail(String newEmail) {
         emailField.clear();
         emailField.sendKeys(newEmail);
     }
+
     public void saveChanges() {
         updateButton.click();
     }
+
     public void clickChangePasswordButton() {
         changePasswordButton.click();
     }
+
     public void enterOldPassword(String oldPass) {
         oldPasswordInput.sendKeys(oldPass);
     }
+
     public void enterNewPassword(String newPass) {
         newPasswordInput.sendKeys(newPass);
     }
+
     public void saveChangedPassword() {
         saveButton.click();
     }
+
     public void clickLogoutButton() {
         logoutButton.click();
     }
+
     public void clickPlanYourTripButton(){
         planYourTripButton.click();
     }
