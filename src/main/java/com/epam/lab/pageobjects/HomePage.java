@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractPage {
-    public EasyTripHomePage() {
+    public HomePage() {
         super();
     }
 
@@ -53,7 +53,6 @@ public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-profile/div[2]/div/div/form/button")
     private WebElement updateButton;
-
 
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-profile/div[2]/div/div/form/a")
     private WebElement changePasswordButton;

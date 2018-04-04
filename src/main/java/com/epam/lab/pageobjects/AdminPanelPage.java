@@ -81,4 +81,8 @@ public class AdminPanelPage extends AbstractPage {
     public void deleteTour(int index) {
         deleteTourButtons.get(index).click();
     }
+
+    public boolean adminPanelButtonIsPresent() {
+        return adminPanelButton.isDisplayed();
+    }
 }
