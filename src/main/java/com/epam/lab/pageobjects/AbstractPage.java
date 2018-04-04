@@ -19,31 +19,31 @@ abstract class AbstractPage {
         return (new WebDriverWait(driver, 30));
     }
 
-    void openPage(String pageURL) {
+    public void openPage(String pageURL) {
         driver.get(pageURL);
     }
 
-    String getTitle (){
+    public String getTitle (){
         return driver.getTitle();
     }
 
-    void waitUntilTitleContains(String title ) {
+    public void waitUntilTitleContains(String title ) {
         getWait().until(ExpectedConditions.titleContains(title));
     }
 
-    void waitUntilClickable(WebElement element) {
+    public void waitUntilClickable(WebElement element) {
         getWait().until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    void waitUntilVisible(WebElement element) {
+    public void waitUntilVisible(WebElement element) {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
 
-    void waitUntilTitleIs(String title) {
+    public void waitUntilTitleIs(String title) {
         getWait().until(ExpectedConditions.titleIs(title));
     }
 
-    void waitUntilAttributeWillNotPresent(WebElement element, String attribute, String attributeValue) {
+    public void waitUntilAttributeToBe(WebElement element, String attribute, String attributeValue) {
         getWait().until(ExpectedConditions.attributeToBe(element, attribute, attributeValue));
     }
 

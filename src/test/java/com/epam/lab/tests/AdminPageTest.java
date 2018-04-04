@@ -1,6 +1,6 @@
 package com.epam.lab.tests;
 
-import com.epam.lab.bisnesobjects.HomePageFacade;
+import com.epam.lab.businesobjects.HomePageFacade;
 import com.epam.lab.driver.DriverFactory;
 import com.epam.lab.pageobjects.AdminPanelPage;
 import com.epam.lab.pageobjects.HomePage;

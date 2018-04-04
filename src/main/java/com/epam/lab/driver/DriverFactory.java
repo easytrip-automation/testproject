@@ -29,10 +29,6 @@ public class DriverFactory {
         webDriver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
     }
 
-    public static void waitToBeClickable(WebElement element) {
-        DriverFactory.getWait().until(ExpectedConditions.elementToBeClickable(element));
-    }
-
     private static void createDriver() {
         if (driver == null) {
             ConfigProperty configProperty = new ConfigProperty();

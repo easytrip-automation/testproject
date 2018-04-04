@@ -15,10 +15,13 @@ public class HomePage extends AbstractPage {
         DriverFactory.getDriver().get(configProperty.getLink());
     }
 
+    @FindBy(xpath = "/html/body")
+    private WebElement body;
+
     @FindBy(xpath = "//*[@id=\"navbarSupportedContent\"]/ul/li[1]/a")
     private WebElement signInButton;
 
-    @FindBy(xpath = "//*[@id=\"exampleInputPassword1\"]")
+    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-login/div[2]/div/div[2]/form/fieldset/div[1]/input")
     private WebElement userNameInput;
 
     @FindBy(xpath = "//*[@id=\"exampleInputPassword1\"]")
@@ -33,7 +36,7 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-login/div[3]/a[2]")
     private WebElement forgotPasswordButton;
 
-    @FindBy(xpath = "//*[@id=\"navbarSupportedContent\"]/ul/li[1]/a")
+    @FindBy(xpath = "//*[@id=\"navbarSupportedContent\"]/ul/li[2]/a")
     private WebElement yourProfileButton;
 
     @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-profile/div[1]/button/span")
@@ -86,6 +89,7 @@ public class HomePage extends AbstractPage {
 
     public void clickSubmitButton() {
         submitButton.click();
+        waitUntilAttributeToBe(body, "class", "");
     }
 
     public void clickSignUp() {

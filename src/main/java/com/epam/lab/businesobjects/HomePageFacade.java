@@ -1,4 +1,4 @@
-package com.epam.lab.bisnesobjects;
+package com.epam.lab.businesobjects;
 
 import com.epam.lab.pageobjects.HomePage;
 
