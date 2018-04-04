@@ -1,5 +1,6 @@
 package com.epam.lab.pageobjects;
 
+
 import com.epam.lab.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,20 +24,24 @@ abstract class AbstractPage {
         driver.get(pageURL);
     }
 
-    void waitUntilTitleIs(String title) {
+    void waitUntilAttributeWillNotPresent(WebElement element) {
+        getWait().until(ExpectedConditions.attributeToBe(element, "class", ""));
+    }
+
+    String  getTitle (){
+        return driver.getTitle();
+    }
+
+    void waitUntilTitleIs(String title ) {
         getWait().until(ExpectedConditions.titleIs(title));
     }
 
-    void waitUntilTitleContains(String title) {
+    void waitUntilTitleContains(String title ) {
         getWait().until(ExpectedConditions.titleContains(title));
     }
 
     void waitUntilClickable(WebElement element) {
         getWait().until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    void waitUntilAttributeWillNotPresent(WebElement element) {
-        getWait().until(ExpectedConditions.attributeToBe(element, "class", ""));
     }
 
     void waitUntilVisible(WebElement element) {
