@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Gmail">
+<suite name="Test EasyTrip">
     <listeners>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="com.epam.lab.utils.report.ReportListener"/>
     </listeners>
-    <test name="Test Send Letter">
+    <test name="Test Admin">
         <parameter name="browser" value="chrome"/>
         <parameter name="username" value="testseleniumlab5@gmail.com"/>
         <parameter name="password" value="teStlab#5"/>
