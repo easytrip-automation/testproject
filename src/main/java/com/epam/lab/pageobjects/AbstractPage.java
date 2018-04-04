@@ -11,7 +11,8 @@ abstract class AbstractPage {
     private WebDriver driver;
 
     AbstractPage() {
-        PageFactory.initElements(driver = DriverFactory.getDriver(), this);
+        driver = DriverFactory.getDriver();
+        PageFactory.initElements(driver, this);
     }
 
     private WebDriverWait getWait() {
@@ -22,12 +23,8 @@ abstract class AbstractPage {
         driver.get(pageURL);
     }
 
-    String  getTitle (){
+    String getTitle (){
         return driver.getTitle();
-    }
-
-    void waitUntilTitleIs(String title ) {
-        getWait().until(ExpectedConditions.titleIs(title));
     }
 
     void waitUntilTitleContains(String title ) {
@@ -42,31 +39,12 @@ abstract class AbstractPage {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
 
-    private WebDriverWait getWait() {
-        return (new WebDriverWait(driver, 30));
-    }
-
-    void openPage(String pageURL) {
-        driver.get(pageURL);
-    }
-
     void waitUntilTitleIs(String title) {
         getWait().until(ExpectedConditions.titleIs(title));
     }
 
-    void waitUntilTitleContains(String title) {
-        getWait().until(ExpectedConditions.titleContains(title));
+    void waitUntilAttributeWillNotPresent(WebElement element, String attribute, String attributeValue) {
+        getWait().until(ExpectedConditions.attributeToBe(element, attribute, attributeValue));
     }
 
-    void waitUntilClickable(WebElement element) {
-        getWait().until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    void waitUntilAttributeWillNotPresent(WebElement element) {
-        getWait().until(ExpectedConditions.attributeToBe(element, "class", ""));
-    }
-
-    void waitUntilVisible(WebElement element) {
-        getWait().until(ExpectedConditions.visibilityOf(element));
-    }
 }
