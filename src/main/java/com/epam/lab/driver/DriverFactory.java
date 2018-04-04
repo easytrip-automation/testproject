@@ -65,7 +65,7 @@ public class DriverFactory {
 
     private static void clickOnPlugin() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        int ppi = Toolkit.getDefaultToolkit().getScreenResolution();
+        int dpi = Toolkit.getDefaultToolkit().getScreenResolution();
 
         double width = dimension.getWidth();
         double mulCoeff = 1.25;
@@ -76,7 +76,7 @@ public class DriverFactory {
             Robot r = new Robot();
             r.mouseMove(0, 0);
 
-            if (ppi > 96) {
+            if (dpi > 96) {
                 width /= mulCoeff;
                 r.mouseMove((int) (width - x / mulCoeff), (int) (y / mulCoeff));
             } else {

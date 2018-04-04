@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class EasyTripHomePage extends AbstractPage {
     public EasyTripHomePage() {
-
+        super();
     }
 
     public void openEasyTripHomePage() {

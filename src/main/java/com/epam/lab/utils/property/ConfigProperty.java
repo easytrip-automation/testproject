@@ -34,9 +34,12 @@ public class ConfigProperty {
     }
 
     public String getLink() {
-        return prop.getProperty("mailLink");
+        return prop.getProperty("easyTripWebSite");
     }
 
     public String getChromeExtension(){return prop.getProperty("chromeExtension");}
 
+    public String getAdminLogin(){return prop.getProperty("adminLogin");}
+
+    public String getAdminPassword(){return prop.getProperty("adminPassword");}
 }
