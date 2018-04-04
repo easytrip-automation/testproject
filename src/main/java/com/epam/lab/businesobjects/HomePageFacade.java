@@ -9,10 +9,26 @@ public class HomePageFacade {
         homePage = new HomePage();
     }
 
+    public void openHomePage() {
+        homePage.openEasyTripHomePage();
+    }
+
     public void login(String login, String password) {
         homePage.clickSignInButton();
         homePage.enterUserName(login);
-        homePage.enterPasword(password);
+        homePage.enterPassword(password);
         homePage.clickSubmitButton();
     }
+
+    public void loginWithNoData(String login, String pass) {
+        homePage.clickSignInButton();
+        homePage.enterUserName(login);
+        homePage.enterPassword(pass);
+        homePage.clickSubmit();
+    }
+
+    public boolean isPassFieldPresent() {
+        return homePage.isEnterPasswordFieldPresent();
+    }
+
 }
