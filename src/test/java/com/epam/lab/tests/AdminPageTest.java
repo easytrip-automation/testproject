@@ -5,11 +5,10 @@ import com.epam.lab.driver.DriverFactory;
 import com.epam.lab.pageobjects.AdminPanelPage;
 import com.epam.lab.pageobjects.HomePage;
 import com.epam.lab.utils.property.ConfigProperty;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class AdminPageTest {
     private ConfigProperty properties;
@@ -34,7 +33,6 @@ public class AdminPageTest {
     @Test
     public void adminLoginTest() {
         homePageFacade.login(properties.getAdminLogin(), properties.getAdminPassword());
-
         homePage.goToProfile();
         assertTrue(adminPanelPage.adminPanelButtonIsPresent());
     }
