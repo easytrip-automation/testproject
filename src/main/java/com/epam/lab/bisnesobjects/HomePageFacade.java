@@ -1,18 +1,18 @@
 package com.epam.lab.bisnesobjects;
 
-import com.epam.lab.pageobjects.EasyTripHomePage;
+import com.epam.lab.pageobjects.HomePage;
 
 public class HomePageFacade {
-    private EasyTripHomePage easyTripHomePage;
+    private HomePage homePage;
 
     public HomePageFacade() {
-        easyTripHomePage = new EasyTripHomePage();
+        homePage = new HomePage();
     }
 
     public void login(String login, String password) {
-        easyTripHomePage.clickSignInButton();
-        easyTripHomePage.enterUserName(login);
-        easyTripHomePage.enterPasword(password);
-        easyTripHomePage.clickLogoutButton();
+        homePage.clickSignInButton();
+        homePage.enterUserName(login);
+        homePage.enterPasword(password);
+        homePage.clickSubmitButton();
     }
 }
