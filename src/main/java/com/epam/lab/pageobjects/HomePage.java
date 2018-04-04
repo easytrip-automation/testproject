@@ -83,13 +83,21 @@ public class HomePage extends AbstractPage {
         userNameInput.sendKeys(username);
     }
 
-    public void enterPasword(String pass) {
+    public void enterPassword(String pass) {
         passwordInputField.sendKeys(pass);
+    }
+
+    public void clickSubmit() {
+        submitButton.click();
     }
 
     public void clickSubmitButton() {
         submitButton.click();
         waitUntilAttributeToBe(body, "class", "");
+    }
+
+    public boolean isEnterPasswordFieldPresent() {
+        return passwordInputField.isDisplayed();
     }
 
     public void clickSignUp() {
@@ -151,7 +159,7 @@ public class HomePage extends AbstractPage {
         logoutButton.click();
     }
 
-    public void clickPlanYourTripButton(){
+    public void clickPlanYourTripButton() {
         planYourTripButton.click();
     }
 }
