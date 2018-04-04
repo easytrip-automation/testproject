@@ -75,15 +75,19 @@ public class HomePage extends AbstractPage {
     public void clickSignInButton() {
         signInButton.click();
     }
+
     public void enterUserName(String username) {
         userNameInput.sendKeys(username);
     }
+
     public void enterPasword(String pass) {
         passwordInputField.sendKeys(pass);
     }
+
     public void clickSubmitButton() {
         submitButton.click();
     }
+
     public void clickSignUp() {
         signUpButton.click();
     }
