@@ -22,6 +22,12 @@ public class HomePageTest {
         Assert.assertTrue(homePageFacade.isPassFieldPresent());
     }
 
+    @Test
+    public void signUpTest(){
+
+    }
+
+
     @AfterTest
     public void tearDown(){
         DriverFactory.close();

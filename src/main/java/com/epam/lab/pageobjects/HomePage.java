@@ -75,6 +75,55 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"carouselExampleCaptions\"]/div/div[1]/div/app-planning-form/a")
     private WebElement planYourTripButton;
 
+    @FindBy(xpath = "//*[@id=\"login\"]")
+    private WebElement signUpUserNameField;
+
+    @FindBy(xpath = "//*[@id=\"firstName\"]")
+    private WebElement signUpFirstNameField;
+    @FindBy(xpath = "//*[@id=\"lastName\"]")
+    private WebElement signUpLastNameField;
+
+    @FindBy(xpath = "//*[@id=\"email\"]")
+    private WebElement signUpEmailField;
+
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    private WebElement signUpPasswordField;
+
+    @FindBy(xpath = "//*[@id=\"confirmPassword\"]")
+    private WebElement confirmPasswordField;
+
+    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-register/div[2]/div/div[2]/form/button")
+    private WebElement signUpCreateAccountButton;
+
+    public void signUpCreateAccount() {
+        signUpCreateAccountButton.click();
+    }
+
+    public void signUpConfirmPassword(String pass) {
+        confirmPasswordField.sendKeys(pass);
+    }
+
+
+    public void signUpPassword(String pass) {
+        signUpPasswordField.sendKeys(pass);
+    }
+
+    public void signUpEmail(String email) {
+        signUpEmailField.sendKeys(email);
+    }
+
+    public void signUpLastName(String lastName) {
+        signUpLastNameField.sendKeys(lastName);
+    }
+
+    public void signUpFillFirstName(String firstName) {
+        signUpFirstNameField.sendKeys(firstName);
+    }
+
+    public void signUpFillUsername(String name) {
+        signUpUserNameField.sendKeys(name);
+    }
+
     public void clickSignInButton() {
         signInButton.click();
     }

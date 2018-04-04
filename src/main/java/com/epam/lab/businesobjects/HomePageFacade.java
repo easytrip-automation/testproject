@@ -27,6 +27,16 @@ public class HomePageFacade {
         homePage.clickSubmit();
     }
 
+    public void logout(){
+        homePage.clickLogoutButton();
+    }
+
+    public void signup(){
+        homePage.clickSignInButton();
+        homePage.clickSignUp();
+
+    }
+
     public boolean isPassFieldPresent() {
         return homePage.isEnterPasswordFieldPresent();
     }
